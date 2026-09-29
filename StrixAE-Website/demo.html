@@ -113,7 +113,8 @@
   <!-- 引入脚本 -->
   <script src="script.js"></script>
   <script>
-    if (location.protocol === 'http:' || location.protocol === 'https:') {
+    if ((location.protocol === 'http:' || location.protocol === 'https:') &&
+        !location.hostname.endsWith('.github.io')) {
       const dataScript = document.createElement('script');
       dataScript.src = '/backend-assets/demo-data.js';
       document.body.appendChild(dataScript);

@@ -2,6 +2,15 @@
 
 本项目包含 StrixAE 展示网站、Python 音频管理后台和频谱绘图脚本。展示页保留原布局，通过后台替换指定样本的音频后，自动生成并更新对应频谱图片。
 
+## 公开前端
+
+- 网站首页：https://unknow0player.github.io/StrixAE_Wensite-II/
+- 音频展示：https://unknow0player.github.io/StrixAE_Wensite-II/StrixAE-Website/demo.html
+
+GitHub Pages 使用 `main` 分支的根目录发布。根目录 `index.html` 自动进入 `StrixAE-Website/index.html`，`.nojekyll` 禁用 README 的 Jekyll 页面生成。访客无需登录即可浏览前端、播放仓库中的示例音频。
+
+公开前端展示仓库内的静态音频和图片。**本机后台上传的内容不会自动同步到 GitHub Pages**；要让访客看到新内容，需将对应的音频、图片与页面引用更新并推送到仓库，或另行部署可公开访问的 Python 后端。GitHub Pages 不提供管理员登录入口。
+
 ## 管理员如何进入后台
 
 1. 下载或克隆整个仓库并解压。保留 `StrixAE-Website`、`backend` 和 `plot_specs.py` 的相对位置。
