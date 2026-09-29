@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StrixAE: An Intelligent Agent for Audio Enhancement under Complex Distortion Coupling in Real-World Scenarios</title>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== 1. 顶部标题区（完全复刻目标样式） ========== -->
+  <header class="paper-header">
+    <h1>StrixAE: An Intelligent Agent for Audio Enhancement under Complex Distortion Coupling in Real-World Scenarios</h1>
+    <p class="conference">— NeurlPS 2026 —</p>
+    <div class="authors">
+      <span>Chenglin Wu*</span>
+      <span>Junjie Wu*</span>
+      <span>Jinhan Chen</span>
+      <p class="affiliation">Xiamen University<br></p>
+    </div>
+    <div class="links">
+      <a href="#" class="link-btn">[arXiv 📄]</a>
+      <a href="#" class="link-btn">[code ⚙️]</a>
+      <a href="#" class="link-btn">[AcoustBench 🖼️]</a>
+    </div>
+    <div class="logo">
+      <!-- 这里放你的logo，替换成实际图片路径 -->
+      <img src="figs/logo.png" alt="TIGER Logo" width="200">
+    </div>
+    <p class="tagline">
+      <span style="color:red">StrixAE</span> is an <span style="color:blue">agent based on a multimodal large language model (MLLM). </span> for audio enhancement which 
+      <span style="color:green">effectively extracts key acoustic features</span> through frequency band-split, multi-scale and full-frequency-frame modeling.
+    </p>
+  </header>
+
+  <!-- ========== 2. 摘要与模型图区 ========== -->
+  <section class="abstract-section">
+    <h2>Abstract</h2>
+    <p class="abstract-text">
+        Audio enhancement in real-world scenarios involves complex distortion couplings
+        and requires personalized enhancement. Existing solutions struggle to address both
+        simultaneously. To improve robustness andenable autonomous operation in such
+        scenarios, we propose StrixAE, an agent based on a multimodal large language
+        model (MLLM). StrixAE leverages the MLLM as a controller to coordinate multiple 
+        audio enhancement and personaliza-tion models. To further enhance system
+        robustness, reduce artifacts, and improve generalization across diverse real-world
+        scenarios, StrixAE is trained through a two-stage process: first, CoT supervised
+        fine-tuning on AcoustBench to ground basic reasoning and tool invocation; second,
+        Audio Perception Reinforcement Learning (APRL) — a reward design specifi-
+        cally tailored for audio restoration pipelines that jointly optimizes format validity,
+        structural coherence, and perceptual quality. Unlike generic RL fine-tuning, APRL
+        introduces structured rewards that enforce executable pipelines and logical section
+        ordering, enabling the agent to produce reliable, interpretable enhancement plans
+        without hallucinated tools. Based on real-world test datasets, our proposed method
+        outperforms most existing open-source and proprietary solutions, achieving state-
+        of-the-art performance across multiple perception metrics and demonstrating strong
+        generalization robustness.
+    </p>
+
+  </section>
+
+  <nav class="page-cards" aria-label="Explore StrixAE">
+    <a class="page-card" href="design.html">
+      <div class="card-preview"><img src="figs/fig3.png" alt="Overall pipeline of StrixAE"></div>
+      <div class="card-content"><span class="card-label">StrixAE</span><h2>StrixAE Design</h2></div>
+    </a>
+    <a class="page-card" href="results.html">
+      <div class="card-preview"><img src="figs/test results.png" alt="Results across four datasets"></div>
+      <div class="card-content"><span class="card-label">StrixAE</span><h2>Results on Four Datasets</h2></div>
+    </a>
+    <a class="page-card" href="demo.html">
+      <div class="card-preview card-spectrogram"><img src="figs/original.png" alt="Speech spectrogram"></div>
+      <div class="card-content"><span class="card-label">StrixAE</span><h2>Speech Enhancement Demo</h2></div>
+    </a>
+  </nav>
+
+  <!-- 底部 -->
+  <footer>
+    <p>&copy; 2026 StrixAE Project | Xiamen University</p>
+  </footer>
+
+  <!-- 引入脚本 -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+*.py[cod]
+backend/data/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+release-upload/

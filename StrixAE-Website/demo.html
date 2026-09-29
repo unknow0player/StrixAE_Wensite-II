@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech Enhancement Demo | StrixAE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage">
+  <header class="subpage-header">
+    <a class="subpage-logo" href="index.html" aria-label="StrixAE home"><img src="figs/logo.png" alt="StrixAE logo"></a>
+    <h1>StrixAE: An Intelligent Agent for Audio Enhancement under Complex Distortion Coupling in Real-World Scenarios</h1>
+  </header>
+  <nav class="subpage-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="design.html">StrixAE Design</a>
+      <a href="results.html">Results on Four Datasets</a>
+      <a href="demo.html" aria-current="page">Speech Enhancement Demo</a>
+  </nav>
+  <main>
+<section class="demo-all">
+
+  <h2 class="demo-main-title">Speech Enhancement Demo</h2>
+
+  <!-- ========== Sample 1 ========== -->
+  <div class="demo-sample">
+    <h3 class="sample-title">Sample 1</h3>
+    <div class="mix-audio">
+      <p>Mixture</p>
+      <audio controls src="Audios/audioset_realrec_airconditioner_2TE3LoA2OUQ-enhance.wav"></audio>
+    </div>
+
+    <div class="demo-grid">
+      <div class="item">
+        <p>Ground Truth</p>
+        <audio controls src="Audios/audioset_realrec_airconditioner_2TE3LoA2OUQ.wav"></audio>
+        <div class="mel"><img src="figs/original.png"></div>
+      </div>
+      <div class="item">
+        <p>TF-GridNet</p>
+        <audio controls src="Audios/audioset_realrec_airconditioner_7EYjHph6ZgM-enhance.wav"></audio>
+        <div class="mel"><img src="figs/enhanced.png"></div>
+      </div>
+      <div class="item">
+        <p>StrixAE</p>
+        <audio controls src="Audios/audioset_realrec_airconditioner_7EYjHph6ZgM.wav"></audio>
+        <div class="mel"><img src="figs/Separate.png"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Sample 2 ========== -->
+  <div class="demo-sample">
+    <h3 class="sample-title">Sample 2</h3>
+    <div class="mix-audio">
+      <p>Mixture</p>
+      <audio controls src="Audios/human(1).wav"></audio>
+    </div>
+
+    <div class="demo-grid">
+      <div class="item">
+        <p>Ground Truth</p>
+        <audio controls src="Audios/human(2).wav"></audio>
+        <div class="mel"><img src="figs/super-res.png"></div>
+      </div>
+      <div class="item">
+        <p>TF-GridNet</p>
+        <audio controls src="Audios/human(3).wav"></audio>
+        <div class="mel"><img src="figs/original.png"></div>
+      </div>
+      <div class="item">
+        <p>StrixAE</p>
+        <audio controls src="Audios/human(4).wav"></audio>
+        <div class="mel"><img src="figs/enhanced.png"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Sample 3 ========== -->
+  <div class="demo-sample">
+    <h3 class="sample-title">Sample 3</h3>
+    <div class="mix-audio">
+      <p>Mixture</p>
+      <audio controls src="Audios/human(6).wav"></audio>
+    </div>
+
+    <div class="demo-grid">
+      <div class="item">
+        <p>Ground Truth</p>
+        <audio controls src="Audios/human(7).wav"></audio>
+        <div class="mel"><img src="figs/enhanced.png"></div>
+      </div>
+      <div class="item">
+        <p>TF-GridNet</p>
+        <audio controls src="Audios/human(8).wav"></audio>
+        <div class="mel"><img src="figs/super-res.png"></div>
+      </div>
+      <div class="item">
+        <p>StrixAE</p>
+        <audio controls src="Audios/human(9).wav"></audio>
+        <div class="mel"><img src="figs/Separate.png"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+</main>
+  <!-- 底部 -->
+  <footer>
+    <p>&copy; 2026 StrixAE Project | Xiamen University</p>
+  </footer>
+
+  <!-- 引入脚本 -->
+  <script src="script.js"></script>
+  <script>
+    if (location.protocol === 'http:' || location.protocol === 'https:') {
+      const dataScript = document.createElement('script');
+      dataScript.src = '/backend-assets/demo-data.js';
+      document.body.appendChild(dataScript);
+    }
+  </script>
+</body>
+</html>

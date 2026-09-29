@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>StrixAE 音频管理</title><link rel="stylesheet" href="/backend-assets/admin.css"></head>
+<body>
+<header><div><small>STRIXAE · 本地管理后台</small><h1>音频与频谱管理</h1></div><a href="/demo.html" target="_blank" rel="noopener">打开展示页 ↗</a></header>
+<main>
+  <p id="status" role="status" aria-live="polite">正在连接后台…</p>
+  <section id="login-panel" hidden><h2>管理员登录</h2><p>首次启动会生成管理密码。请打开 <code>backend/data/admin-password.txt</code>，复制其中的密码。</p><form id="login"><label>管理密码<input id="password" type="password" autocomplete="current-password" required></label><button>登录</button></form></section>
+  <section id="manager" hidden>
+    <div class="toolbar"><p>选择位置 → 上传音频 → 自动生成频谱并发布到展示页。</p><button id="logout" class="secondary">退出登录</button></div>
+    <div class="workspace">
+      <section><h2>替换音频</h2><form id="upload">
+        <label>样本<select id="sample"><option value="1">Sample 1</option><option value="2">Sample 2</option><option value="3">Sample 3</option></select></label>
+        <label>音频位置<select id="role"><option value="mixture">Mixture</option><option value="ground_truth">Ground Truth</option><option value="tf_gridnet">TF-GridNet</option><option value="strixae">StrixAE</option></select></label>
+        <label>选择音频<input id="file" type="file" accept=".wav,.flac,.ogg,.mp3" required></label>
+        <p class="hint">支持 WAV / FLAC / OGG / MP3，最多 25 MB、120 秒，8–96 kHz，单/双声道。播放副本统一为 WAV；频谱按原脚本在 16 kHz 下生成。</p>
+        <button id="submit-upload">上传并更新展示页</button>
+      </form><p class="hint">首次生成可能需要较长时间，请等待结果。Mixture 的频谱仅在后台显示，以保留展示页原布局。</p></section>
+      <section><h2 id="preview-title">当前内容</h2><p id="metadata"></p><audio id="preview-audio" controls preload="metadata"></audio><img id="preview-image" alt="当前音频的频谱图" hidden><p id="no-image" class="hint"></p></section>
+    </div>
+    <section><div class="toolbar"><h2>历史版本</h2><button id="reset" class="secondary">恢复该位置原始内容</button></div><p class="hint">恢复只影响当前选中的位置，已上传版本仍会保留。备份方法见 backend/README.md。</p><div id="history"></div></section>
+  </section>
+</main><script src="/backend-assets/admin.js"></script>
+</body></html>
